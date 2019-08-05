@@ -1,40 +1,16 @@
-import React from 'react';
-import Login from './src/components/login';
-import SignUp from './src/components/signUp';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { Provider } from "react-redux";
+import navigator from "./src/navigation/navigator";
+import store from "./src/redux/store/configureStore";
 export default class App extends React.Component {
   render() {
     return (
-      <Container />
+      <Provider store={store}>
+        <Container />
+      </Provider>
     );
   }
 }
-const RootStack = createStackNavigator(
-  {
-    Login: {
-      screen: Login,
-    },
-    SignUp: {
-      screen: SignUp,
-    },
-  },
-  {
-    initialRouteName:"Login",
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor:"gray"
-      },
-      headerTintColor: "gold",
-      headerTitleStyle: {
-        flex:1,
-        textAlign:"center"
-      }
-    }
-  },
-  
-);
 
-const Container = createAppContainer(RootStack);
-
+const Container = createAppContainer(navigator);
