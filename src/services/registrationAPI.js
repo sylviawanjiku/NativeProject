@@ -1,8 +1,7 @@
 import axios from "axios";
-import { resolveBaseUrl } from ".";
+import Config from "react-native-config";
 
-const baseUrl = resolveBaseUrl();
-
+const baseUrl = Config.API_URL;
 const entry = axios.create({
   baseURL: baseUrl,
   headers: {
@@ -12,7 +11,7 @@ const entry = axios.create({
 
 class RegistrationAPI {
   static register(userData) {
-    return entry.post("/register/", userData);
+    return entry.post("register/", userData);
   }
 }
 

@@ -22,7 +22,7 @@ const registration = (state = initialState, action) => {
         isRegistered: true,
         isLoading: false,
         errors: {},
-        user: action.newUser
+        user: action.newUser.data
       };
 
     case REGISTER_USER_FAILURE:
@@ -30,11 +30,10 @@ const registration = (state = initialState, action) => {
         ...state,
         isRegistered: false,
         isLoading: false,
-        errors: {
-          error: action.error
-        },
+        errors: action.error.response.data,
         user: {}
       };
+
 
     default:
       return state;

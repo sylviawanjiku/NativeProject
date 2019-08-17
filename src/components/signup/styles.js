@@ -6,18 +6,16 @@ const styles = StyleSheet.create({
     flex: 1
   },
   login: {
-    justifyContent: "center",
     alignItems: "center",
-    flex: 0.4,
     marginTop: 50
   },
   login2: {
-    justifyContent: "center",
-    flex: 3,
     alignItems: "stretch"
   },
+
   login3: {
-    flex: 0.8
+    // justifyContent: "center",
+    marginBottom: 50
   },
   welcome: {
     color: "gold",
@@ -27,6 +25,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "column",
     width: "90%",
+    marginTop: 50,
     marginLeft: 15
   },
   input: {
@@ -44,7 +43,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     width: "90%",
-    marginLeft: 15
+    marginLeft: 15,
+    marginBottom: 50
   },
   btnTxt: {
     fontSize: 18,
